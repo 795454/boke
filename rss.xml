@@ -205,6 +205,43 @@ URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
 &lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
 &lt;/ul&gt;
+</content:encoded></item><item><title>测试</title><link>https://hjh79.dpdns.org/posts/markdown-mermaid/</link><guid isPermaLink="true">https://hjh79.dpdns.org/posts/markdown-mermaid/</guid><description>嘻嘻</description><pubDate>Sat, 22 Nov 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🤖 Assistant&lt;/h2&gt;
+&lt;p&gt;是的，&lt;strong&gt;这个 &lt;code&gt;UrlBasedCorsConfigurationSource&lt;/code&gt; Bean 直接写在 &lt;code&gt;@Configuration&lt;/code&gt; 配置类里面，并且以 &lt;code&gt;@Bean&lt;/code&gt; 注解标记，Spring Boot (或 Spring Framework) 就会自动发现并使用它。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;让我来详细解释一下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;@Configuration&lt;/code&gt; 注解：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个注解告诉 Spring 这是一个配置类，Spring IoC 容器会扫描并处理它。&lt;/li&gt;
+&lt;li&gt;在配置类中，你可以定义 Bean。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;@Bean&lt;/code&gt; 注解：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个注解标记在方法上，表示该方法返回的对象应该被 Spring IoC 容器注册为一个 Bean。&lt;/li&gt;
+&lt;li&gt;Spring 会调用这个方法来创建 &lt;code&gt;UrlBasedCorsConfigurationSource&lt;/code&gt; 的实例，并将其添加到应用程序的上下文中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Spring Boot 的自动配置：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Boot 对 CORS (Cross-Origin Resource Sharing) 提供了很好的自动配置支持。&lt;/li&gt;
+&lt;li&gt;当 Spring Boot 检测到你的应用上下文中存在一个 &lt;code&gt;CorsConfigurationSource&lt;/code&gt; 类型的 Bean 时，它会&lt;strong&gt;自动将其集成到 Spring Security 或 Spring Web MVC 的 CORS 过滤器链中&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;这意味着你不需要手动去注册一个 &lt;code&gt;CorsFilter&lt;/code&gt; 或在 &lt;code&gt;WebMvcConfigurer&lt;/code&gt; 中配置它，Spring Boot 会为你完成这些集成工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;总结来说，你提供的那段代码：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;定义了一个名为 &lt;code&gt;corsConfigurationSource&lt;/code&gt; 的方法。&lt;/li&gt;
+&lt;li&gt;该方法返回一个 &lt;code&gt;UrlBasedCorsConfigurationSource&lt;/code&gt; 实例。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@Bean&lt;/code&gt; 注解告诉 Spring 将这个返回的实例注册为一个 Bean。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@Configuration&lt;/code&gt; 告诉 Spring 这是一个配置类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;因此，当你启动 Spring Boot 应用程序时，Spring 会找到这个配置类，执行 &lt;code&gt;corsConfigurationSource()&lt;/code&gt; 方法，并将返回的 &lt;code&gt;UrlBasedCorsConfigurationSource&lt;/code&gt; Bean 注册到 IoC 容器中。然后，Spring Boot 的自动配置机制会检测到这个 Bean，并将其用于处理 CORS 请求。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;唯一需要注意的是，如果你在项目中同时使用了 Spring Security，CORS 配置通常会集成到 Spring Security 的配置中。但即使在这种情况下，提供 &lt;code&gt;CorsConfigurationSource&lt;/code&gt; Bean 仍然是推荐的做法，Spring Security 会自动找到并使用它。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以，&lt;strong&gt;是的，它会工作的。&lt;/strong&gt; 这种方式是配置 CORS 的一种标准且推荐的方式。&lt;/p&gt;
 </content:encoded></item><item><title>Firefly 布局系统详解</title><link>https://hjh79.dpdns.org/posts/firefly-layout-system/</link><guid isPermaLink="true">https://hjh79.dpdns.org/posts/firefly-layout-system/</guid><description>深入了解 Firefly 的布局系统，包括侧边栏布局（左侧/双侧）和文章列表布局（列表/网格），以及为什么双侧边栏与网格模式会冲突的技术原理。</description><pubDate>Fri, 02 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;📖 概述&lt;/h2&gt;
 &lt;p&gt;Firefly 提供了灵活的布局系统，允许您根据内容需求和个人喜好自定义博客的视觉呈现方式。布局系统主要包括&lt;strong&gt;侧边栏布局&lt;/strong&gt;和&lt;strong&gt;文章列表布局&lt;/strong&gt;两个维度，它们相互配合，共同决定了页面的整体结构。&lt;/p&gt;
 &lt;p&gt;本文将详细介绍 Firefly 的各种布局模式、它们的特点、使用场景，以及为什么某些布局之间会存在冲突。&lt;/p&gt;
@@ -992,157 +1029,6 @@ console.log(&apos;抱歉，你知道我在第几行吗?&apos;)
 &lt;pre&gt;&lt;code&gt;console.log(&apos;来自第5行的问候!&apos;)
 console.log(&apos;我在第6行&apos;)
 &lt;/code&gt;&lt;/pre&gt;
-</content:encoded></item><item><title>Markdown Mermaid 图表</title><link>https://hjh79.dpdns.org/posts/markdown-mermaid/</link><guid isPermaLink="true">https://hjh79.dpdns.org/posts/markdown-mermaid/</guid><description>一个包含 Mermaid 的 Markdown 博客文章简单示例。</description><pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Markdown 中 Mermaid 图表完整指南&lt;/h1&gt;
-&lt;p&gt;本文演示如何在 Markdown 文档中使用 Mermaid 创建各种复杂图表，包括流程图、时序图、甘特图、类图和状态图。&lt;/p&gt;
-&lt;h2&gt;流程图示例&lt;/h2&gt;
-&lt;p&gt;流程图非常适合表示流程或算法步骤。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;graph TD
-    A[开始] --&amp;gt; B{条件检查}
-    B --&amp;gt;|是| C[处理步骤 1]
-    B --&amp;gt;|否| D[处理步骤 2]
-    C --&amp;gt; E[子过程]
-    D --&amp;gt; E
-    subgraph E [子过程详情]
-        E1[子步骤 1] --&amp;gt; E2[子步骤 2]
-        E2 --&amp;gt; E3[子步骤 3]
-    end
-    E --&amp;gt; F{另一个决策}
-    F --&amp;gt;|选项 1| G[结果 1]
-    F --&amp;gt;|选项 2| H[结果 2]
-    F --&amp;gt;|选项 3| I[结果 3]
-    G --&amp;gt; J[结束]
-    H --&amp;gt; J
-    I --&amp;gt; J
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;时序图示例&lt;/h2&gt;
-&lt;p&gt;时序图显示对象之间随时间的交互。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sequenceDiagram
-    participant User as 用户
-    participant WebApp as 网页应用
-    participant Server as 服务器
-    participant Database as 数据库
-
-    User-&amp;gt;&amp;gt;WebApp: 提交登录请求
-    WebApp-&amp;gt;&amp;gt;Server: 发送认证请求
-    Server-&amp;gt;&amp;gt;Database: 查询用户凭据
-    Database--&amp;gt;&amp;gt;Server: 返回用户数据
-    Server--&amp;gt;&amp;gt;WebApp: 返回认证结果
-    
-    alt 认证成功
-        WebApp-&amp;gt;&amp;gt;User: 显示欢迎页面
-        WebApp-&amp;gt;&amp;gt;Server: 请求用户数据
-        Server-&amp;gt;&amp;gt;Database: 获取用户偏好
-        Database--&amp;gt;&amp;gt;Server: 返回偏好设置
-        Server--&amp;gt;&amp;gt;WebApp: 返回用户数据
-        WebApp-&amp;gt;&amp;gt;User: 加载个性化界面
-    else 认证失败
-        WebApp-&amp;gt;&amp;gt;User: 显示错误消息
-        WebApp-&amp;gt;&amp;gt;User: 提示重新输入
-    end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;甘特图示例&lt;/h2&gt;
-&lt;p&gt;甘特图非常适合显示项目进度和时间线。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;gantt
-    title 网站开发项目时间线
-    dateFormat  YYYY-MM-DD
-    axisFormat  %m/%d
-    
-    section 设计阶段
-    需求分析      :a1, 2023-10-01, 7d
-    UI设计                 :a2, after a1, 10d
-    原型创建        :a3, after a2, 5d
-    
-    section 开发阶段
-    前端开发      :b1, 2023-10-20, 15d
-    后端开发       :b2, after a2, 18d
-    数据库设计           :b3, after a1, 12d
-    
-    section 测试阶段
-    单元测试              :c1, after b1, 8d
-    集成测试       :c2, after b2, 10d
-    用户验收测试   :c3, after c2, 7d
-    
-    section 部署
-    生产环境部署     :d1, after c3, 3d
-    发布                    :milestone, after d1, 0d
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;类图示例&lt;/h2&gt;
-&lt;p&gt;类图显示系统的静态结构，包括类、属性、方法及其关系。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;classDiagram
-    class User {
-        +String username
-        +String password
-        +String email
-        +Boolean active
-        +login()
-        +logout()
-        +updateProfile()
-    }
-    
-    class Article {
-        +String title
-        +String content
-        +Date publishDate
-        +Boolean published
-        +publish()
-        +edit()
-        +delete()
-    }
-    
-    class Comment {
-        +String content
-        +Date commentDate
-        +addComment()
-        +deleteComment()
-    }
-    
-    class Category {
-        +String name
-        +String description
-        +addArticle()
-        +removeArticle()
-    }
-    
-    User &quot;1&quot; -- &quot;*&quot; Article : 写作
-    User &quot;1&quot; -- &quot;*&quot; Comment : 发表
-    Article &quot;1&quot; -- &quot;*&quot; Comment : 拥有
-    Article &quot;1&quot; -- &quot;*&quot; Category : 属于
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;状态图示例&lt;/h2&gt;
-&lt;p&gt;状态图显示对象在其生命周期中经历的状态序列。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;stateDiagram-v2
-    [*] --&amp;gt; 草稿
-    
-    草稿 --&amp;gt; 审核中 : 提交
-    审核中 --&amp;gt; 草稿 : 拒绝
-    审核中 --&amp;gt; 已批准 : 批准
-    已批准 --&amp;gt; 已发布 : 发布
-    已发布 --&amp;gt; 已归档 : 归档
-    已发布 --&amp;gt; 草稿 : 撤回
-    
-    state 已发布 {
-        [*] --&amp;gt; 活跃
-        活跃 --&amp;gt; 隐藏 : 临时隐藏
-        隐藏 --&amp;gt; 活跃 : 恢复
-        活跃 --&amp;gt; [*]
-        隐藏 --&amp;gt; [*]
-    }
-    
-    已归档 --&amp;gt; [*]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;饼图示例&lt;/h2&gt;
-&lt;p&gt;饼图非常适合显示比例和百分比数据。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pie title 网站流量来源分析
-    &quot;搜索引擎&quot; : 45.6
-    &quot;直接访问&quot; : 30.1
-    &quot;社交媒体&quot; : 15.3
-    &quot;推荐链接&quot; : 6.4
-    &quot;其他来源&quot; : 2.6
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;Mermaid 是在 Markdown 文档中创建各种类型图表的强大工具。本文演示了如何使用流程图、时序图、甘特图、类图、状态图和饼图。这些图表可以帮助您更清晰地表达复杂的概念、流程和数据结构。&lt;/p&gt;
-&lt;p&gt;要使用 Mermaid，只需在代码块中指定 mermaid 语言，并使用简洁的文本语法描述图表。Mermaid 会自动将这些描述转换为美观的可视化图表。&lt;/p&gt;
-&lt;p&gt;尝试在您的下一篇技术博客文章或项目文档中使用 Mermaid 图表 - 它们将使您的内容更加专业且更易理解！&lt;/p&gt;
 </content:encoded></item><item><title>在文章中嵌入视频</title><link>https://hjh79.dpdns.org/posts/video/</link><guid isPermaLink="true">https://hjh79.dpdns.org/posts/video/</guid><description>这篇文章演示如何在博客文章中嵌入视频。</description><pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;只需从 YouTube 或其他平台复制嵌入代码，然后将其粘贴到 markdown 文件中。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;---
 title: 在文章中嵌入视频
