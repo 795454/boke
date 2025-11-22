@@ -23,8 +23,7 @@ const postsCollection = defineCollection({
 		encrypted: z.boolean().optional().default(false),
 		password: z.string().optional().default(""),
 
-		/* Custom permalink */
-		permalink: z.string().optional(),
+		series: z.string().optional(),
 
 		/* For internal use */
 		prevTitle: z.string().default(""),
@@ -33,10 +32,12 @@ const postsCollection = defineCollection({
 		nextSlug: z.string().default(""),
 	}),
 });
+
 const specCollection = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/spec" }),
 	schema: z.object({}),
 });
+
 export const collections = {
 	posts: postsCollection,
 	spec: specCollection,

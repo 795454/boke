@@ -1,302 +1,229 @@
-# 🌸 Mizuki  
-![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
-![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
-![Astro](https://img.shields.io/badge/Astro-5.15.3-orange)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-![Mizuki Preview](./README.webp)
+<img src="./docs/images/1131.png" width = "405" height = "511" alt="NapCat" align=right />
 
-<table>
-  <tr>
-    <td><img alt="" src="docs/image/1.webp"></td>
-    <td><img alt="" src="docs/image/2.webp"></td>
-    <td><img alt="" src="docs/image/3.webp"></td>
-  <tr>
-  <tr>
-    <td><img alt="" src="docs/image/4.webp"></td>
-    <td><img alt="" src="docs/image/5.webp"></td>
-    <td><img alt="" src="docs/image/6.webp"></td>
-  <tr>
-</table>
+<div align="center">
 
+# Firefly
+> 一款清新美观的 Astro 博客主题模板
+> 
+> ![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
+![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)
+![Astro](https://img.shields.io/badge/Astro-5.16.0-orange)
+</div>
 
-A modern, feature-rich static blog template built with [Astro](https://astro.build), featuring advanced functionality and beautiful design.
-
-[**🖥️ Live Demo**](https://mizuki.mysqil.com/)
-[**📝 Documentation**](https://docs.mizuki.mysqil.com/)
-
-🌏 README Languages
-[**English**](./README.md) /
-[**中文**](./README.zh.md) /
-[**日本語**](./docs/README.ja.md) /
-[**中文繁体**](./docs/README.tw.md) /
-
-![Configuration](configuration.svg)
-
-### 🔧 Component Configuration System Restructuring
-- **Unified Configuration Architecture:** Brand new modular component configuration system, supporting dynamic component management and order configuration
-- **Configuration-Driven Component Loading:** Restructured SideBar component, implementing fully configuration-based component loading mechanism
-- **Unified Control Switches:** Removed independent enable switches for music player and announcement components, unified control through sidebarLayoutConfig
-- **Responsive Layout Adaptation:** Components support responsive layouts, automatically adjusting display based on device type
-
-### 📐 Layout System Optimization
-- **Dynamic Sidebar Position Adjustment:** Support for left/right sidebar switching, with automatic layout adaptation
-- **Intelligent Article Directory Positioning:** When sidebar is on the right, article navigation automatically moves to the left, providing a better reading experience
-- **Grid Layout Improvements:** Optimized CSS Grid layout, resolving container width anomaly issues
-
-### 🎛️ Configuration File Format Standardization
-- **Standardized Configuration Format:** Created unified component configuration file format specifications
-- **Type Safety:** Comprehensive TypeScript type definitions ensuring configuration type safety
-- **Extensibility:** Support for custom component types and configuration options
-
-### 🧹 Code Optimization
-- **Test File Cleanup:** Removed unused test configurations and dependencies, reducing project size
-- **Code Structure Optimization:** Improved component architecture, enhancing code maintainability
-- **Performance Improvement:** Optimized component loading logic, improving page rendering performance
 
 ---
 
-## ✨ Features
+[**🖥️在线预览**](https://firefly.cuteleaf.cn/) /
+[**📝使用文档**](https://docs-firefly.cuteleaf.cn/) /
+[**🍀我的博客**](https://blog.cuteleaf.cn) 
 
-### 🎨 Design & Interface
-- [x] Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
-- [x] Smooth animations and page transitions using [Swup](https://swup.js.org/)
-- [x] Light/dark theme switching with system preference detection
-- [x] Customizable theme colors and dynamic banner carousel
-- [x] Fullscreen background images with carousel, opacity, and blur effects
-- [x] Fully responsive design for all devices
-- [x] Beautiful typography with JetBrains Mono font
+⚡ 静态站点生成: 基于Astro的超快加载速度和SEO优化
 
-### 🔍 Content & Search
-- [x] Advanced search functionality based on [Pagefind](https://pagefind.app/)
-- [x] [Enhanced Markdown features](#-markdown-extensions) with syntax highlighting
-- [x] Interactive table of contents with auto-scrolling
-- [x] RSS feed generation
-- [x] Reading time estimation
-- [x] Article categorization and tagging system
+🎨 现代化设计: 简洁美观的界面，支持自定义主题色
+
+📱 移动友好: 完美的响应式体验，移动端专项优化
+
+🔧 高度可配置: 大部分功能模块均可通过配置文件自定义
+
+<img alt="firefly" src="./docs/images/1.webp" />
+
+在重要的布局上，Firefly创新性地增加了左右双侧边栏、文章网格(二列)布局，
+
+增加了站点统计、日历组件、文章目录等小组件，让侧边栏更加丰富，
+
+同时也保留了 Furwai 的布局系统，可在配置文件中自由切换。
+
+**更多布局配置及演示请查看：[Firefly 布局系统详解](https://firefly.cuteleaf.cn/posts/firefly-layout-system/)**
+
+## ✨ 功能特性
+
+### 核心功能
+
+- [x] **Astro + Tailwind CSS** - 基于现代技术栈的超快静态站点生成
+- [x] **流畅动画** - Swup 页面过渡动画，提供丝滑的浏览体验
+- [x] **响应式设计** - 完美适配桌面端、平板和移动设备
+- [x] **多语言支持** - i18n 国际化，支持简体中文、繁体中文、英文、日文、俄语
+- [x] **全文搜索** - 基于 Pagefind 的客户端搜索，支持文章内容索引。同时支持 MeiliSearch 搜索引擎
+
+### 个性化
+- [x] **侧边栏** - 支持配置单侧边栏、双侧边栏，支持前台自由切换
+- [x] **文章布局** - 支持配置(单列)列表、网格(二列)布局，支持前台自由切换
+- [x] **字体管理** - 支持自定义字体，丰富的字体选择器
+- [x] **页脚配置** - HTML 内容注入，完全自定义
+- [x] **导航栏自定义** - Logo、标题、链接全面自定义
+- [x] **壁纸模式切换** - 横幅壁纸、全屏壁纸、纯色背景，支持前台自由切换
+- [x] **主题色自定义** - 360° 色相调节，支持亮色/暗色/跟随系统三种模式，支持前台自由切换
+
+### 页面组件
+- [x] **留言板** - 支持留言页面，集成评论系统
+- [x] **公告栏** - 顶部公告提示，支持关闭和自定义样式
+- [x] **看板娘** - 支持 Spine 和 Live2D 两种动画引擎
+- [x] **站点统计** - 显示文章、分类、标签数目、文章总字数、运行时长、最后更新时间
+- [x] **站点日历** - 显示当月日历，以及当月的发布文章
+- [x] **赞助页面** - 多种支付方式、收款码展示、赞助者列表、文章内赞助按钮
+- [x] **樱花特效** - 支持樱花特效，全屏樱花效果
+- [x] **友情链接** - 精美的友链展示卡片
+- [x] **广告组件** - 支持自定义侧边栏广告内容
+- [x] **番组计划** - 基于 Bangumi API 的追番和游戏记录展示
+- [x] **评论系统** - 集成 Twikoo、Waline、Giscus、Disqus 评论系统
+- [x] **访问量统计** - 支持调用 Waline、Twikoo 自带的访问量追踪
+- [x] **音乐播放器** - 基于 APlayer，支持本地音乐和 Meting API 在线音乐
+
+### 内容增强
+- [x] **图片灯箱** - Fancybox 图片预览功能
+- [x] **浮动目录** - 动态显示文章目录，支持锚点跳转，在侧边栏目录隐藏后显示
+- [x] **侧边栏目录** - 动态显示文章目录，支持锚点跳转
+- [x] **增强代码块** - 基于 Expressive Code，支持代码折叠、行号、语言标识
+- [x] **数学公式支持** - KaTeX 渲染引擎，支持行内和块级公式
+- [x] **Markdown扩展** - [Markdown extended features](https://github.com/saicaca/fuwari?tab=readme-ov-file#-markdown-extended-syntax)
+- [x] **文章随机封面图** - 支持通过 API 获取随机封面图
+
+### SEO
+- [x] **SEO 优化** - 完整的 meta 标签和结构化数据
+- [x] **RSS 订阅** - 自动生成 RSS Feed
+- [x] **站点地图** - 自动生成 XML Sitemap，支持页面过滤配置
 
 
+## 📝计划中...
 
-### 📱 Special Pages
-- [x] **Anime Tracking Page** - Track anime watching progress and ratings
-- [x] **Friends Page** - Beautiful cards showcasing friend websites
-- [x] **Diary Page** - Share life moments, similar to social media
-- [x] **Archive Page** - Organized timeline view of articles
-- [x] **About Page** - Customizable personal introduction
+- [ ] **重构 Live2D 看板娘**
+- [ ] **优化网格布局的文章封面**
+- [ ] **持续优化动画流畅度**
+- [ ] 更多功能持续完善中...
 
-### 🛠 Technical Features
-- [x] **Enhanced code blocks** based on [Expressive Code](https://expressive-code.com/)
-- [x] **Math formula support** with KaTeX rendering
-- [x] **Image optimization** with PhotoSwipe gallery integration
-- [x] **SEO optimization** including sitemaps and meta tags
-- [x] **Performance optimization** with lazy loading and caching
-- [x] **Comment system** with Twikoo integration
+如果你有好用的功能和优化，请提交 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-### 📦 Installation
+### 环境要求
 
-1. **Clone the repository:**
+- Node.js ≤ 22
+- pnpm ≤ 9
+
+### 本地开发部署
+
+1. **克隆仓库：**
    ```bash
-   git clone https://github.com/matsuzaka-yuki/mizuki.git
-   cd mizuki
+   git clone https://github.com/Cuteleaf/Firefly.git
+   cd Firefly
    ```
-
-2. **Install dependencies:**
+   **先 [Fork](https://github.com/CuteLeaf/Firefly/fork) 到自己仓库在克隆（推荐）**
    ```bash
-   # Install pnpm if not already installed
+   git clone https://github.com/you-github-name/Firefly.git
+   cd Firefly
+   ```
+3. **安装依赖：**
+   ```bash
+   # 如果没有安装 pnpm，先安装
    npm install -g pnpm
    
-   # Install project dependencies
+   # 安装项目依赖
    pnpm install
    ```
 
-3. **Configure your blog:**
-   - Edit `src/config.ts` to customize blog settings
-   - Update site information, theme colors, banner images, and social links
-   - Configure feature page functionality
+4. **配置博客：**
+   - 编辑 `src/config/` 目录下的配置文件自定义博客设置
 
-4. **Start the development server:**
+5. **启动开发服务器：**
    ```bash
    pnpm dev
    ```
-   Your blog will be available at `http://localhost:4321`
+   博客将在 `http://localhost:4321` 可用
 
-### 📝 Content Management
+### 平台托管部署
+- **参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages, Cloudflare Pages, EdgeOne Pages 等。**
 
-- **Create new posts:** `pnpm new-post <filename>`
-- **Edit posts:** Modify files in `src/content/posts/`
-- **Customize special pages:** Edit files in `src/content/spec/`
-- **Add images:** Place images in `src/assets/` or `public/`
+## 📖 配置说明
 
-### 🚀 Deployment
+> 📚 **详细配置文档**: 查看 [Firefly使用文档](https://docs-firefly.cuteleaf.cn/) 获取完整的配置指南
 
-Deploy your blog to any static hosting platform:
+### 配置文件结构
 
-- **Vercel:** Connect your GitHub repository to Vercel
-- **Netlify:** Deploy directly from GitHub
-- **GitHub Pages:** Use the included GitHub Actions workflow
-- **Cloudflare Pages:** Connect your repository
-
-- **Environment Variable Configuration (Optional):** Configure in `.env` file or deployment platform
-
-```bash
-# Umami API key for accessing Umami analytics data
-# If Umami is enabled in config.ts, it's recommended to configure the API key here
-UMAMI_API_KEY=your_umami_api_key_here
-# bcrypt salt rounds (10-14 recommended, default 12)
-BCRYPT_SALT_ROUNDS=12
+```
+src/
+├── config/
+│   ├── index.ts              # 配置索引文件
+│   ├── siteConfig.ts         # 站点基础配置
+│   ├── profileConfig.ts      # 用户资料配置
+│   ├── commentConfig.ts      # 评论系统配置
+│   ├── announcementConfig.ts # 公告配置
+│   ├── licenseConfig.ts      # 许可证配置
+│   ├── footerConfig.ts       # 页脚配置
+│   ├── FooterConfig.html     # 页脚HTML内容
+│   ├── expressiveCodeConfig.ts # 代码高亮配置
+│   ├── sakuraConfig.ts       # 樱花特效配置
+│   ├── fontConfig.ts         # 字体配置
+│   ├── sidebarConfig.ts      # 侧边栏布局配置
+│   ├── navBarConfig.ts       # 导航栏配置
+│   ├── musicConfig.ts        # 音乐播放器配置
+│   ├── pioConfig.ts          # 看板娘配置
+│   ├── adConfig.ts           # 广告配置
+│   ├── friendsConfig.ts      # 友链配置
+│   ├── sponsorConfig.ts      # 赞助配置
+│   └── coverImageConfig.ts  # 文章随机封面图配置
 ```
 
-Before deployment, update the `siteURL` in `src/config.ts`.
-**Not recommended** to commit the `.env` file to Git. The `.env` file should only be used for local debugging or building. For cloud platform deployment, it's recommended to configure via the platform's `environment variables` settings.
 
-## 📝 Post Frontmatter Format
+## ⚙️ 文章 Frontmatter
 
 ```yaml
 ---
 title: My First Blog Post
 published: 2023-09-09
-description: This is the first post of my new blog.
-image: ./cover.jpg
-tags: [tag1, tag2]
-category: Frontend
+description: This is the first post of my new Astro blog.
+image: ./cover.jpg  # 或使用 "api" 来启用随机封面图
+tags: [Foo, Bar]
+category: Front-end
 draft: false
-pinned: false
-lang: en      # Only set when article language differs from site language in config.ts
+lang: zh-CN      # 仅当文章语言与 `siteConfig.ts` 中的网站语言不同时需要设置
 ---
 ```
 
-### Frontmatter Field Descriptions
+## 🧞 指令
 
-- **title**: Article title (required)
-- **published**: Publication date (required)
-- **description**: Article description for SEO and previews
-- **image**: Cover image path (relative to article file)
-- **tags**: Array of tags for categorization
-- **category**: Article category
-- **draft**: Set to `true` to hide article in production
-- **pinned**: Set to `true` to pin article to top
-- **lang**: Article language (only set when different from site default)
+下列指令均需要在项目根目录执行：
 
-### Pinned Articles Feature
+| Command                           | Action                            |
+|:----------------------------------|:----------------------------------|
+| `pnpm install` 并 `pnpm add sharp` | 安装依赖                              |
+| `pnpm dev`                        | 在 `localhost:4321` 启动本地开发服务器      |
+| `pnpm build`                      | 构建网站至 `./dist/`                   |
+| `pnpm preview`                    | 本地预览已构建的网站                        |
+| `pnpm new-post <filename>`        | 创建新文章                             |
+| `pnpm astro ...`                  | 执行 `astro add`, `astro check` 等指令 |
+| `pnpm astro --help`               | 显示 Astro CLI 帮助                   |
 
-The `pinned` field allows you to pin important articles to the top of your blog list. Pinned articles will always appear before regular articles regardless of their publication date.
+## 🙏 致谢
 
-**Usage:**
-```yaml
-pinned: true  # Pin this article to the top
-pinned: false # Regular article (default)
-```
+- 非常感谢 [saicaca](https://github.com/saicaca) 开发的 [Fuwari](https://github.com/saicaca/fuwari) 模板，Firefly 就是基于这个模板二次开发
+- 参考了博主 [霞葉](https://kasuha.com) 分享的 [Bangumi 收藏展示页面方案](https://kasuha.com/posts/fuwari-enhance-ep2/)
+- 参考了 [Mizuki](https://github.com/matsuzaka-yuki/Mizuki) 的横幅主副标题/Footer注入/自定义导航栏/公告组件/樱花特效/KaTeX/Fancybox方案
+- 使用了 [Astro](https://astro.build) 和 [Tailwind CSS](https://tailwindcss.com) 构建
+- 使用了 [MetingJS](https://github.com/metowolf/MetingJS) 和 [APlayer](https://github.com/MoePlayer/APlayer) 音乐播放器
+- 使用了b站up [公公的日常](https://space.bilibili.com/3546750017080050) 提供的Q版 `流萤` 看板娘切片数据模型
+- 图标来自 [Iconify](https://iconify.design/)
 
-**Sorting Rules:**
-1. Pinned articles appear first, sorted by publication date (newest first)
-2. Regular articles follow, sorted by publication date (newest first)
+## 🍀 贡献者
 
-## 🧩 Markdown Extensions
+感谢以下贡献者对本项目做出的贡献，如有问题或建议，请提交 [Issue](https://github.com/CuteLeaf/Firefly/issues) 或 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)。
 
-Mizuki supports enhanced features beyond standard GitHub Flavored Markdown:
+<a href="https://github.com/CuteLeaf/Firefly/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=CuteLeaf/Firefly" />
+</a>
 
-### 📝 Enhanced Writing
-- **Callouts:** Create beautiful annotation boxes using `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`, etc.
-- **Math Formulas:** Write LaTeX math formulas using `$inline$` and `$$block$$` syntax
-- **Code Highlighting:** Advanced syntax highlighting with line numbers and copy buttons
-- **GitHub Cards:** Embed repository cards using `::github{repo="user/repo"}`
+![Alt](https://repobeats.axiom.co/api/embed/6139639d8e88da4d3dc9d45fd43f4e4b2d580086.svg "Repobeats analytics image")
 
-### 🎨 Visual Elements
-- **Image Gallery:** Automatic PhotoSwipe integration for image viewing
-- **Collapsible Sections:** Create expandable content blocks
-- **Custom Components:** Enhance content with special directives
+## ⭐ Star History
 
-### 📊 Content Organization
-- **Table of Contents:** Automatically generated from headings with smooth scrolling
-- **Reading Time:** Automatically calculated and displayed
-- **Article Metadata:** Rich frontmatter support with categories and tags
+[![Star History Chart](https://api.star-history.com/svg?repos=CuteLeaf/Firefly&type=Date)](https://star-history.com/#CuteLeaf/Firefly&Date)
 
-## ⚡ Commands
 
-All commands are run from the project root:
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 
-| Command                    | Action                                   |
-|:---------------------------|:-----------------------------------------|
-| `pnpm install`             | Install dependencies                     |
-| `pnpm dev`                 | Start local dev server at `localhost:4321` |
-| `pnpm build`               | Build production site to `./dist/`       |
-| `pnpm preview`             | Preview build locally before deployment  |
-| `pnpm check`               | Run Astro error checking                 |
-| `pnpm format`              | Format code with Biome                   |
-| `pnpm lint`                | Check and fix code issues                |
-| `pnpm new-post <filename>` | Create a new blog post                   |
-| `pnpm astro ...`           | Run Astro CLI commands                   |
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-## 🎯 Configuration Guide
-
-### 🔧 Basic Configuration
-
-Edit `src/config.ts` to customize your blog:
-
-```typescript
-export const siteConfig: SiteConfig = {
-  title: "Your Blog Name",
-  subtitle: "Your Blog Description",
-  lang: "en", // or "zh-CN", "ja", etc.
-  themeColor: {
-    hue: 210, // 0-360, theme hue
-    fixed: false, // Hide theme color picker
-  },
-  banner: {
-    enable: true,
-    src: ["assets/banner/1.webp"], // Banner images
-    carousel: {
-      enable: true,
-      interval: 0.8, // seconds
-    },
-  },
-};
-```
-
-### 📱 Feature Page Configuration
-
-- **Anime Page:** Edit anime list in `src/pages/anime.astro`
-- **Friends Page:** Edit friend data in `src/content/spec/friends.md`
-- **Diary Page:** Edit moments in `src/pages/diary.astro`
-- **About Page:** Edit content in `src/content/spec/about.md`
-
-## ✏️ Contributing
-
-Contributions are welcome! Feel free to submit issues and pull requests.
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-### Original Project License
-
-This project is based on [Fuwari](https://github.com/saicaca/fuwari), which is licensed under the MIT License. The original copyright notice and permission notice are included in the LICENSE.MIT file in accordance with the MIT License requirements.
-
-## 🙏 Acknowledgements
-
-- Based on the original [Fuwari](https://github.com/saicaca/fuwari) template (MIT License)
-- Built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com)
-- Inspired by [Yukina](https://github.com/WhitePaper233/yukina) - a beautiful and elegant blog template
-- Icons from [Iconify](https://iconify.design/)
-
-### Special Thanks
-
-- **[Fuwari](https://github.com/saicaca/fuwari)** by saicaca - The original template that this project is based on. Thank you for creating such a beautiful and functional template.
-- **[Yukina](https://github.com/WhitePaper233/yukina)** - Thanks for providing design inspiration and creativity that helped shape this project. Yukina is an elegant blog template that demonstrates excellent design principles and user experience.
-
-### Special Thanks
-
-- **[Yukina](https://github.com/WhitePaper233/yukina)** - Thanks for providing design inspiration and creativity that helped shape this project. Yukina is an elegant blog template that demonstrates excellent design principles and user experience.
-
----
-
-⭐ If you find this project helpful, please consider giving it a star!
+<!-- ALL-CONTRIBUTORS-LIST:END -->

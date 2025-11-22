@@ -61,11 +61,6 @@
   #dynamic-sidebar {
     width: var(--sidebar-width-mobile);
     padding: 0.5rem;
-    /* 移动端优化：添加硬件加速 */
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
   
   .sidebar-top-section,
@@ -75,8 +70,6 @@
   
   .widget-container {
     max-height: var(--widget-max-height-mobile);
-    /* 移动端优化：减少过渡效果，避免闪烁 */
-    transition: all 0.2s ease-in-out;
   }
   
   /* 移动端隐藏的组件 */
@@ -103,8 +96,8 @@
   }
 }
 
-/* 平板端样式 (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* 平板端样式 (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
   #dynamic-sidebar {
     width: var(--sidebar-width-tablet);
     padding: 0.75rem;
@@ -124,15 +117,11 @@
     display: none;
   }
   
-  /* 平板端优化 */
-  .widget-container[data-widget-type="music-player"] {
-    /* 音乐播放器在平板端紧凑显示 */
-    transform: scale(0.95);
-  }
+
 }
 
-/* 桌面端样式 (> 1024px) */
-@media (min-width: 1025px) {
+/* 桌面端样式 (>= 1024px) */
+@media (min-width: 1024px) {
   #dynamic-sidebar {
     width: var(--sidebar-width-desktop);
     padding: 1rem;
@@ -248,19 +237,7 @@
   }
 }
 
-/* Music Player 组件 */
-.widget-container[data-widget-type="music-player"] {
-  /* 音乐播放器固定高度 */
-  min-height: 100px;
-  max-height: 150px;
-}
 
-@media (max-width: 767px) {
-  .widget-container[data-widget-type="music-player"] {
-    min-height: 80px;
-    max-height: 120px;
-  }
-}
 
 /* 动画效果 */
 

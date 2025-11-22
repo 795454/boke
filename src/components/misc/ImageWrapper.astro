@@ -1,5 +1,5 @@
 ---
-import path from "node:path";
+import * as path from "node:path";
 
 interface Props {
 	id?: string;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 import { Image } from "astro:assets";
-import { url } from "../../utils/url-utils";
+import { url } from "@/utils/url-utils";
 
 const { id, src, alt, position = "center", basePath = "/" } = Astro.props;
 const className = Astro.props.class;

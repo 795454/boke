@@ -1,9 +1,8 @@
 ---
-import { getSortedPosts } from "../../utils/content-utils";
+import { getSortedPosts } from "@/utils/content-utils";
 import WidgetLayout from "./WidgetLayout.astro";
-import I18nKey from "../../i18n/i18nKey";
-import { i18n } from "../../i18n/translation";
-import { siteConfig } from "../../config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
 
 interface Props {
   class?: string;
@@ -58,12 +57,11 @@ const weekDays = [
   i18n(I18nKey.calendarSaturday)
 ];
 
-// 判断是否为中文环境
-const isChinese = siteConfig.lang.startsWith('zh');
-const yearSuffix = isChinese ? '年' : ' ';
+// 年份文本
+const yearText = i18n(I18nKey.year);
 ---
 
-<WidgetLayout id="calendar-widget" class={`hidden md:block ${className}`} style={style}>
+<WidgetLayout id="calendar-widget" class={className} style={style}>
   <span slot="title-icon" id="calendar-widget-title" class="flex-1 text-left"></span>
   <div class="calendar-container">
     <!-- 星期标题 -->
@@ -90,7 +88,7 @@ const yearSuffix = isChinese ? '年' : ' ';
   </div>
 </WidgetLayout>
 
-<script define:vars={{ postDateMap: Object.fromEntries(postDateMap), allPostsData, monthNames, weekDays, yearSuffix }}>
+<script define:vars={{ postDateMap: Object.fromEntries(postDateMap), allPostsData, monthNames, weekDays, yearText }}>
   // 客户端动态渲染日历
   function renderCalendar() {
     const now = new Date();
@@ -101,7 +99,7 @@ const yearSuffix = isChinese ? '年' : ' ';
     // 更新 Widget 标题
     const titleElement = document.getElementById('calendar-widget-title');
     if (titleElement) {
-      titleElement.textContent = `${currentYear}${yearSuffix}${monthNames[currentMonth]}`;
+      titleElement.textContent = `${currentYear}${yearText}${monthNames[currentMonth]}`;
     }
     
     // 获取月份的第一天是星期几
@@ -264,6 +262,11 @@ const yearSuffix = isChinese ? '年' : ' ';
     // 之后每24小时更新一次
     setInterval(renderCalendar, 24 * 60 * 60 * 1000);
   }, msUntilMidnight);
+
+  // 页面切换时重新渲染
+  document.addEventListener("swup:contentReplaced", () => {
+    setTimeout(renderCalendar, 100);
+  });
 </script>
 
 <style>
