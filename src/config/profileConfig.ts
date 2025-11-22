@@ -2,8 +2,8 @@ import type { ProfileConfig } from "../types/config";
 
 export const profileConfig: ProfileConfig = {
   avatar: "/assets/images/avatar.webp",
-  name: "Firefly",
-  bio: "Hello, I'm Firefly.",
+  name: "hjh79",
+  bio: "非淡泊无以明志，非宁静无以致远。",
   links: [
     {
       name: "Bilibli",

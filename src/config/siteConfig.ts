@@ -7,8 +7,8 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
   title: "Firefly",
-  subtitle: "Demo site",
-  site_url: "https://firefly.cuteleaf.cn",
+  subtitle: "hjh79",
+  site_url: "https://hjh79.dpdns.org",
   description:
     "Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
   keywords: [
@@ -78,7 +78,7 @@ export const siteConfig: SiteConfig = {
     // 如果sidebarConfig.ts中侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
     defaultMode: "list",
     // 是否允许用户切换布局
-    allowSwitch: true,
+    allowSwitch: false,
   },
 
   // 分页配置
@@ -112,15 +112,9 @@ export const siteConfig: SiteConfig = {
         // 主页显示自定义文本（全局开关）
         enable: true,
         // 主页横幅主标题
-        title: "Lovely firefly!",
+        title: "Miss You",
         // 主页横幅副标题
         subtitle: [
-          "In Reddened Chrysalis, I Once Rest",
-          "From Shattered Sky, I Free Fall",
-          "Amidst Silenced Stars, I Deep Sleep",
-          "Upon Lighted Fyrefly, I Soon Gaze",
-          "From Undreamt Night, I Thence Shine",
-          "In Finalized Morrow, I Full Bloom",
         ],
         typewriter: {
           //打字机开启 → 循环显示所有副标题
